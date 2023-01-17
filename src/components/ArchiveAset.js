@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { ExternalLink } from "react-external-link";
+import CurrencyFormat from "react-currency-format";
 
 const ArchiveAset = () => {
   const [asets, setAsets] = useState([]);
@@ -28,7 +29,7 @@ const ArchiveAset = () => {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Tipe</th>
+                <th>Tipe aset</th>
                 <th>Name</th>
                 <th>Luas tanah</th>
                 <th>Luas bangunan</th>
@@ -56,11 +57,24 @@ const ArchiveAset = () => {
                     <td>{aset.kamar_tidur}</td>
                     <td>{aset.kamar_mandi}</td>
                     <td>{aset.lokasi_aset[0].name}</td>
-                    <td>{aset.fasilitas.map(
-                      (txt, id) => <span className="badge mx-1" key={id}>{txt}</span>
-                    )}</td>
+                    <td>
+                      {aset.fasilitas.map((txt, id) => (
+                        <span className="badge mx-1" key={id}>
+                          {txt}
+                        </span>
+                      ))}
+                    </td>
                     <td>{aset.alamat}</td>
-                    <td>{aset.harga}</td>
+                    <td>
+                      <CurrencyFormat
+                        value={aset.harga}
+                        displayType={"text"}
+                        thousandSeparator={"."}
+                        decimalSeparator={","}
+                        prefix={"Rp"}
+                        renderText={(value) => <div>{value}</div>}
+                      ></CurrencyFormat>
+                    </td>
                     <td>
                       <ExternalLink
                         href={aset.gambar_aset.guid}

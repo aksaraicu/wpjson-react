@@ -1,5 +1,5 @@
 {
-  "name": "harisenin-tugas-js-react",
+  "name": "wpjson-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,6 +9,7 @@
     "axios": "^1.2.2",
     "daisyui": "^2.47.0",
     "react": "^18.2.0",
+    "react-currency-format": "^1.1.0",
     "react-dom": "^18.2.0",
     "react-external-link": "^2.0.1",
     "react-router-dom": "^6.6.2",
