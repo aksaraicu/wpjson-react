@@ -62,10 +62,16 @@ const ArchiveAset = () => {
                     <td>{aset.alamat}</td>
                     <td>{aset.harga}</td>
                     <td>
-                      <img
-                        src={aset.gambar_aset.guid}
-                        alt={aset.gambar_aset.post_title.toString()}
-                      />
+                      <ExternalLink
+                        href={aset.gambar_aset.guid}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src={aset.gambar_aset.guid}
+                          alt={aset.gambar_aset.post_title.toString()}
+                        />
+                      </ExternalLink>
                     </td>
                     <td>
                       <ExternalLink
