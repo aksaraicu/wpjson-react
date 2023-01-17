@@ -56,7 +56,9 @@ const ArchiveAset = () => {
                     <td>{aset.kamar_tidur}</td>
                     <td>{aset.kamar_mandi}</td>
                     <td>{aset.lokasi_aset[0].name}</td>
-                    <td>{aset.fasilitas}</td>
+                    <td>{aset.fasilitas.map(
+                      (txt, id) => <span className="badge mx-1" key={id}>{txt}</span>
+                    )}</td>
                     <td>{aset.alamat}</td>
                     <td>{aset.harga}</td>
                     <td>
