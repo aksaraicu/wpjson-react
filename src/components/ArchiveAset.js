@@ -5,12 +5,15 @@ import CurrencyFormat from "react-currency-format";
 
 const ArchiveAset = () => {
   const [asets, setAsets] = useState([]);
+  // const [loading, setLoading] = useState(false);
 
   const getAsets = async () => {
     try {
+      // setLoading(true)
       const response = await axios.get(
         "https://ruangaset.com/wp-json/wp/v2/aset"
       );
+      // setLoading(false)
       setAsets(response.data);
     } catch (e) {
       console.log(e.message);
@@ -86,6 +89,7 @@ const ArchiveAset = () => {
                           alt={aset.gambar_aset.post_title.toString()}
                         />
                       </ExternalLink>
+                      {/* <a href={aset.gambar_aset.guid}>test</a> */}
                     </td>
                     <td>
                       <ExternalLink
